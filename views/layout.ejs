@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/_head', { title }) %>
+  </head>
+  <body>
+    <div id="inside">
+      <header>
+        <%- include('partials/_nav') %>
+      </header>
+      <main class="container-fluid">
+        <%- body %>
+      </main>
+      <footer>
+        <%- include('partials/_footer') %>
+      </footer>
+      </div>
+  </body>
+</html>
+
+<!--
+    Package.json
+        Purpose: The blueprint of the project
+        It stores projects metadata (name,version), dependencies (like Express, EJS), and scripts (commands you can run).
+    Public Folder
+        Holds static files like CSS, images, and client-side JavaScript
+        Files here are accessible directly by the browser
+    
+    Views Folder
+        Contains your EJS templates   
+        Instead of static HTML, you use EJS to insert variables and reuse code
+        
+    Paartials: Samll reusable pieces (like header, nav, footer). Included in other templates to avoid repetition
+    
+    Layout: The page wrapper that provides the overall HTML structure
+    
+    Pages: The individualpage content
+    
+    Express:A popular web framework for Node.js
+        
+    EJS:
+        Embedded JavaScript
+        A templating engine that lets you write HTML pages with dome dynamic JavaScript inside
+-->

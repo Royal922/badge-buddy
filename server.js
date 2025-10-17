@@ -1,9 +1,11 @@
+
 // Adding the Express Template
 // express: the core library that helps you create a web server easily
 // path: A built-in Node.js moduleto work with file and folder paths (helps keep fil paths consistent across OS)
 // app: Your Express apllication instance - the main thing you use to configure your server
 const express = require('express');
 const path = require('path');
+const expressLayouts = require('express-ejs-layouts');
 
 const app = express();
 
@@ -12,6 +14,8 @@ const app = express();
 // Sets the folder where your view templates are stored
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.use(expressLayouts);
+app.set('layout', 'layout');
 
 // Serve static files
 // Serves static files like css, images, javaScript from the public folder
@@ -32,26 +36,30 @@ app.use((req, res, next) => {
 // When someone visits /, it renders views/pages/home.ejs
 // The { title: 'home'} part sends data (a variabe called title) to the EJS template
 app.get('/', (req, res) => {
-  res.render('pages/home', { title: 'Home' });
+  res.render('pages/home', { title: 'Home', activePage: 'home'});
 });
 app.get('/badge-explorer', (req, res) => {
-  res.render('pages/badge-explorer', { title: 'Badge Explorer' });
+  res.render('pages/badge-explorer', { title: 'Badge Explorer', activePage: 'badge-explorer'});
 });
 app.get('/dashboard-girl', (req, res) => {
-  res.render('pages/dashboard-girl', { title: 'Girl Dashboard' });
+  res.render('pages/dashboard-girl', { title: 'Girl Dashboard'});
 });
 app.get('/dashboard-leader', (req, res) => {
-  res.render('pages/dashboard-leader', { title: 'Leader Dashboard' });
+  res.render('pages/dashboard-leader', { title: 'Leader Dashboard'});
 });
 app.get('/dashboard-admin', (req, res) => {
   res.render('pages/dashboard-admin', { title: 'Administrator Dashboard' });
 });
 app.get('/login', (req, res) => {
-  res.render('pages/login', { title: 'Login' });
+  res.render('pages/login', { title: 'Login', activePage: 'login' });
+});
+app.get('/signup', (req, res) => {
+  res.render('pages/signup', { title: 'Sign Up', activePage: 'signup' });
 });
 app.get('/contact', (req, res) => {
-  res.render('pages/contact', { title: 'Contact & Help' });
+  res.render('pages/contact', { title: 'Contact & Help', activePage: 'contact' });
 });
+
 
 // 404 page
 // If no previous route matched, this middleware runs
@@ -66,8 +74,6 @@ app.use((req, res) => {
 // Logs the URL to the console so you kno where to open it in your browser
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
-
-
 
 
 
