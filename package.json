@@ -1,23 +1,17 @@
 {
   "name": "nodesite",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js",
-    "sass": "sass public/scss:public/css --watch"
+    "client": "npm run dev --prefix client",
+    "full-dev": "concurrently \"npm run dev\" \"npm run client\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "express-ejs-layouts": "^2.5.1"
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
   },
   "devDependencies": {
-    "sass": "^1.93.2"
+    "concurrently": "^9.0.0",
+    "nodemon": "^3.1.7"
   }
 }
-

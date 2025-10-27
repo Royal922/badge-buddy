@@ -1,5 +1,6 @@
-# Node dependencies
+# Node & React build files
 node_modules/
+client/node_modules/
 
 # Logs
 npm-debug.log*
@@ -8,11 +9,21 @@ yarn-error.log*
 
 # Environment variables
 .env
+.env.local
+
+# Dist / build folders
+dist/
+build/
+client/dist/
 
 # System files
 .DS_Store
 Thumbs.db
 
-# Build outputs
-dist/
-build/
+# IDE / Editor stuff
+.vscode/
+.idea/
+
+# Cache
+.cache/
+*.log

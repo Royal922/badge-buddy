@@ -1,5 +1,4 @@
-//Defined Sass variables
-$prefix: "bs-"; // same as Bootstrap uses
+$prefix: "bs-";
 $nav-tabs-border-width: 1px;
 $nav-tabs-border-color: #001830;
 $nav-tabs-border-radius: 0.375rem;
@@ -8,9 +7,6 @@ $nav-tabs-link-active-color: white;
 $nav-tabs-link-active-bg: #fff;
 $nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #fff;
 
-//used those variables to set css custom properties & Applied those custom properties
-
-//navbar 
 .nav-tabs {
   --#{$prefix}nav-tabs-border-width: #{$nav-tabs-border-width};
   --#{$prefix}nav-tabs-border-color: #{$nav-tabs-border-color};
@@ -19,7 +15,6 @@ $nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #fff;
   --#{$prefix}nav-tabs-link-active-color: #{$nav-tabs-link-active-color};
   --#{$prefix}nav-tabs-link-active-bg: #{$nav-tabs-link-active-bg};
   --#{$prefix}nav-tabs-link-active-border-color: #{$nav-tabs-link-active-border-color};
-
   border-bottom: none;
   border-radius: var(--bs-nav-tabs-border-radius);
 
@@ -58,48 +53,15 @@ $nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #fff;
 
 .navbar {
   --#{$prefix}nav-tabs-border-radius: #{$nav-tabs-border-radius};
-  margin:10px 10px 10px 10px;
-  padding: auto 10px auto 10px;
-  background-color:#00AE58;
-  color:white;
-  border-radius: var(--bs-nav-tabs-border-radius);
-}
-
-.navbar-brand {
-  color:white;
+  margin: 10px;
+  background-color: #00AE58;
+  color: white;
 }
 
 #inside {
-  --#{$prefix}nav-tabs-border-radius: #{$nav-tabs-border-radius};
-
-  margin:10px 10px 10px 10px;
-  padding: 10px 10px 10px 10px;
+  margin: 10px;
+  padding: 10px;
   border-radius: var(--bs-nav-tabs-border-radius);
   background-color: #d8ffec;
-  
 }
-
-header {
-  --#{$prefix}nav-tabs-border-radius: #{$nav-tabs-border-radius};
-
-  margin:15px 15px 15px 15px;
-  padding: 5px 5px 5px 5px;
-  border-radius: var(--bs-nav-tabs-border-radius);
-  background-color: #6fdea8;
-}
-
-.navbar-brand {
-  font-size:x-large;
-
-}
-.navbar-brand:hover {
-  text-decoration: none;
-  color: inherit;
-  background: none;
-  border-color: transparent;
-  cursor: default;
-}
-
-
-//Home
 
