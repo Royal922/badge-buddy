@@ -22,21 +22,21 @@ function App() {
       <>
         <Helmet>
           <title>Badge Buddy</title>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-
         </Helmet>
 
-        <Navbar />
-        <main className="container-fluid">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-        </main>
-        <Footer />
+        <div id="inside">
+          <Navbar />
+
+          <main className="container-fluid">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+            </Routes>
+          </main>
+
+          <Footer />
+        </div>
       </>
     </Router>
   );

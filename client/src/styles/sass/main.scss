@@ -29,12 +29,14 @@ $nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #fff;
 
     &.active {
       border-radius: var(--bs-nav-tabs-border-radius);
-      background-color: var(--bs-nav-tabs-link-active-bg);
+      background-color: #d8ffec;
+      color: #001b0d;
       border-color: var(--bs-nav-tabs-link-active-border-color);
     }
 
     &.login-link {
       color: white;
+      border-radius: var(--bs-nav-tabs-border-radius);
       font-weight: 600;
       padding: 0.3rem 1rem;
       margin-left: 0.5rem;
@@ -53,15 +55,20 @@ $nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #fff;
 
 .navbar {
   --#{$prefix}nav-tabs-border-radius: #{$nav-tabs-border-radius};
+
   margin: 10px;
   background-color: #00AE58;
   color: white;
+  border-radius: var(--bs-nav-tabs-border-radius);
 }
 
 #inside {
+  --#{$prefix}nav-tabs-border-radius: #{$nav-tabs-border-radius};
+
   margin: 10px;
   padding: 10px;
   border-radius: var(--bs-nav-tabs-border-radius);
   background-color: #d8ffec;
+  overflow: hidden;
 }
 

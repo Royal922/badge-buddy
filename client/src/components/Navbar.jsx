@@ -1,68 +1,61 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom"; // optional, for active links
-import Layout from "../components/Layout";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleNavbar = () => setIsOpen(!isOpen);
 
   return (
     <nav className="navbar navbar-expand-md main-nav">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <NavLink className="navbar-brand" to="/">
           Badge Buddy
-        </a>
+        </NavLink>
 
-        {/* Hamburger Button */}
         <button
           className="navbar-toggler"
           type="button"
           onClick={toggleNavbar}
-          aria-controls="navbarSupportedContent"
           aria-expanded={isOpen}
-          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Collapsible Menu */}
-        <div
-          className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}
-          id="navbarSupportedContent"
-        >
+        <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
           <ul className="nav nav-tabs w-100 justify-content-between align-items-center">
-            {/* Left side */}
+
             <div className="d-flex web-pages">
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <NavLink className="nav-link" to="/" end>
                   Home
-                </a>
+                </NavLink>
               </li>
+
               <li className="nav-item">
-                <a className="nav-link" href="/contact">
+                <NavLink className="nav-link" to="/contact">
                   Help
-                </a>
+                </NavLink>
               </li>
             </div>
 
-            {/* Right side */}
             <div className="d-flex">
               <li className="nav-item">
-                <a className="nav-link login-link" href="/login">
+                <NavLink to="/login" className={({ isActive }) => `nav-link login-link ${isActive ? "" : ""}`} isActive={() => false}>
                   Login
-                </a>
+                </NavLink>
               </li>
+
               <li className="nav-item">
-                <a className="nav-link signup-link" href="/signup">
+                <NavLink to="/signup" className={({ isActive }) => `nav-link signup-link ${isActive ? "" : ""}`} isActive={() => false}>
                   Sign Up
-                </a>
+                </NavLink>
               </li>
             </div>
+
           </ul>
         </div>
+
       </div>
     </nav>
   );
